@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <th:block th:replace="base::header"></th:block>
+    <title>SignUp Confirmation</title>
+</head>
+<body>
+<th:block th:replace="base::nav"></th:block>
+
+<header class="masthead">
+    <div class="header-content">
+        <div class="header-content-inner">
+
+            <form class="well form-horizontal"
+                  action="#"
+                  th:action="@{/signUpForm}"
+                  method=""
+                  th:object="${newUser}">
+                <legend>Sign Up Info</legend>
+
+                <input type="hidden" th:field="*{id}"/>
+                <!--Title-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <p th:text="*{firstname}"></p>
+                        </div>
+                    </div>
+                </div>
+                <!--link-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <p th:text="*{lastname}"></p>
+                        </div>
+                    </div>
+                </div>
+                <!--UserName-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <p th:text="*{email}"></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</header>
+<th:block th:replace="base::script"></th:block>
+</body>
+</html>
